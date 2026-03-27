@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Employee Training App</title>
+    <script>
+      // SPA redirect trick for GitHub Pages
+      // Saves the path to sessionStorage then redirects to index.html
+      var path = window.location.pathname;
+      var base = '/employee-training-app'; // change to your repo name
+      var redirectPath = path.replace(base, '') || '/';
+      sessionStorage.setItem('spa_redirect', redirectPath + window.location.search);
+      window.location.replace(base + '/');
+    </script>
+  </head>
+  <body></body>
+</html>
