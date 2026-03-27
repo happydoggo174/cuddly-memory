@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   // Replace 'employee-training-app' with your actual GitHub repo name
-  base: process.env.NODE_ENV === 'production' ? '/employee-training-app/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/cuddly-memory/' : '/',
   plugins: [
     vue(),
     tailwindcss(),
