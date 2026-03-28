@@ -32,6 +32,7 @@ jobs:
         run: npm run build
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_SELF_URL: ${{ secrets.VITE_SELF_URL }}
 
       - uses: actions/configure-pages@v4
 

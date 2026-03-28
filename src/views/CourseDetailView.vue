@@ -20,7 +20,8 @@ const copied = ref(false)
 // Build frontend checkin URL from slug (not the backend URL from API)
 function getFrontendCheckinUrl(c: Course): string {
   const slug = c.checkin_slug ?? c.id
-  return `${import.meta.env.VITE_SELF_URL || "https://happydoggo174.github.io/cuddly-memory"}/checkin/${slug}`
+  const baseUrl = import.meta.env.VITE_SELF_URL || window.location.origin
+  return `${baseUrl}/checkin/${slug}`
 }
 
 onMounted(async () => {
