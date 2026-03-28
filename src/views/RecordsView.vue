@@ -135,7 +135,7 @@ onMounted(load)
       v-else-if="records.length === 0"
       title="Không có hồ sơ nào"
       description="Thử thay đổi bộ lọc hoặc chờ nhân viên check-in"
-      icon="📋"
+      icon="assignment"
     />
 
     <div v-else class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">

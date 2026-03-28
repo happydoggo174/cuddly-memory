@@ -128,7 +128,7 @@ function printQR() {
 
             <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
               <BaseButton variant="secondary" size="sm" @click="router.push(`/courses/${course.id}/edit`)">
-                ✏️ Chỉnh sửa
+                Chỉnh sửa
               </BaseButton>
             </div>
           </div>
@@ -140,7 +140,7 @@ function printQR() {
               <span class="text-sm text-gray-500">{{ attendees.length }} người</span>
             </div>
 
-            <EmptyState v-if="attendees.length === 0" title="Chưa có học viên check-in" icon="👥" />
+            <EmptyState v-if="attendees.length === 0" title="Chưa có học viên check-in" icon="group" />
 
             <div v-else class="overflow-x-auto">
               <table class="w-full text-sm">
@@ -179,10 +179,12 @@ function printQR() {
 
             <div class="space-y-2">
               <BaseButton variant="primary" size="sm" class="w-full" @click="downloadQR">
-                ⬇️ Tải QR
+                <span class="material-icons text-sm mr-1">download</span>
+                Tải QR
               </BaseButton>
               <BaseButton variant="secondary" size="sm" class="w-full" @click="printQR">
-                🖨️ In QR
+                <span class="material-icons text-sm mr-1">print</span>
+                In QR
               </BaseButton>
             </div>
           </div>
@@ -198,7 +200,8 @@ function printQR() {
               {{ getFrontendCheckinUrl(course) }}
             </a>
             <BaseButton variant="secondary" size="sm" class="w-full" @click="copyLink">
-              {{ copied ? '✅ Đã copy' : '📋 Copy link' }}
+              <span class="material-icons text-sm mr-1">{{ copied ? 'check' : 'content_copy' }}</span>
+              {{ copied ? 'Đã copy' : 'Copy link' }}
             </BaseButton>
           </div>
         </div>

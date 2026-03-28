@@ -83,7 +83,7 @@ onMounted(load)
       v-else-if="courses.length === 0"
       title="Chưa có khóa học nào"
       description="Tạo khóa học đầu tiên để bắt đầu"
-      icon="📚"
+      icon="school"
     >
       <BaseButton variant="primary" class="mt-4" @click="router.push('/courses/create')">
         Tạo khóa học
@@ -105,7 +105,7 @@ onMounted(load)
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-50">
-            <tr v-for="course in courses" :key="course.id" class="hover:bg-gray-50 transition-colors">
+            <tr v-for="course in courses" :key="course.id" class="hover:bg-gray-50 transition-colors" @click="router.push(`/courses/${course.id}`)">
               <td class="px-4 py-3">
                 <p class="font-medium text-gray-900">{{ course.course_name }}</p>
                 <p class="text-xs text-gray-400 mt-0.5">{{ course.training_format }}</p>
@@ -130,9 +130,8 @@ onMounted(load)
               </td>
               <td class="px-4 py-3">
                 <div class="flex items-center gap-1 justify-end">
-                  <BaseButton variant="ghost" size="sm" @click="router.push(`/courses/${course.id}`)">Xem</BaseButton>
-                  <BaseButton variant="ghost" size="sm" @click="router.push(`/courses/${course.id}/edit`)">Sửa</BaseButton>
-                  <BaseButton variant="ghost" size="sm" class="text-red-500 hover:bg-red-50" @click="deleteTarget = course">Xóa</BaseButton>
+                  <BaseButton variant="ghost" size="sm" @click.stop="router.push(`/courses/${course.id}/edit`)">Sửa</BaseButton>
+                  <BaseButton variant="ghost" size="sm" class="text-red-500 hover:bg-red-50" @click.stop="deleteTarget = course">Xóa</BaseButton>
                 </div>
               </td>
             </tr>
